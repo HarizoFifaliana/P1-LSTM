@@ -31,7 +31,7 @@ def preprocess_data(csv_file, max_vocab_size=10000):
     Charge les données CSV, tokenise les textes et encode les cibles.
     """
     df = pd.read_csv(csv_file)
-    if 'target' not in df.columns or 'text' not in df.columns:
+    if 'Label' not in df.columns or 'text' not in df.columns:
         raise ValueError("Le fichier CSV doit contenir les colonnes 'target' et 'text'.")
 
     # Nettoyer les données
