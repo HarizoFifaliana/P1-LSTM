@@ -9,6 +9,8 @@ from sklearn.preprocessing import LabelEncoder
 from torch.nn.utils.rnn import pad_sequence
 from collections import Counter
 from nltk.tokenize import word_tokenize
+import nltk
+nltk.download('punkt_tab')
 
 # Téléchargement des bibliothèques supplémentaires si nécessaire
 # pip install pandas scikit-learn nltk torch
