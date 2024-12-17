@@ -35,11 +35,11 @@ def preprocess_data(csv_file, max_vocab_size=10000):
         raise ValueError("Le fichier CSV doit contenir les colonnes 'target' et 'text'.")
 
     # Nettoyer les données
-    df = df.dropna(subset=['text', 'target'])
+    df = df.dropna(subset=['text', 'Label'])
 
     # Tokenisation
     texts = [word_tokenize(text.lower()) for text in df['text']]
-    targets = LabelEncoder().fit_transform(df['target'])
+    targets = LabelEncoder().fit_transform(df['Label'])
 
     # Construction du vocabulaire
     counter = Counter(word for text in texts for word in text)
